@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -23,8 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${orbitron.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#0f0f0f] text-white">
+      <body className="min-h-full flex flex-col bg-[#0f0f0f] text-white selection:bg-primary selection:text-black">
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
